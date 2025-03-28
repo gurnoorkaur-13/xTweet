@@ -34,6 +34,7 @@ const RightPanel = () => {
 				<div className='flex flex-col gap-4'>
 					{/* item */}
 					{isLoading && (
+						// if loading is true then show the animation(skeleton) while loading
 						<>
 							<RightPanelSkeleton />
 							<RightPanelSkeleton />
@@ -41,7 +42,7 @@ const RightPanel = () => {
 							<RightPanelSkeleton />
 						</>
 					)}
-					{!isLoading &&
+					{!isLoading &&         //else show the suggested users
 						suggestedUsers?.map((user) => (
 							<Link
 								to={`/profile/${user.username}`}
@@ -65,7 +66,7 @@ const RightPanel = () => {
 									<button
 										className='btn bg-white text-black hover:bg-white hover:opacity-90 rounded-full btn-sm'
 										onClick={(e) => {
-											e.preventDefault();
+											e.preventDefault(); //so it doesnt take us to the profile of user
 											follow(user._id);
 										}}
 									>

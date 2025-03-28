@@ -21,7 +21,7 @@ function App() {
 			try {
 				const res = await fetch("/api/auth/me");
 				const data = await res.json();
-				if (data.error) return null;
+				if (data.error) return null; //if logout clicked-> ie: unauthenticated user will give data.error then return a null value -> helps to invalidate query and navigate to login page when logout clicked
 				if (!res.ok) {
 					throw new Error(data.error || "Something went wrong");
 				}
@@ -45,7 +45,8 @@ function App() {
 	return (
 		<div className='flex max-w-6xl mx-auto'>
 			{/* Common component, bc it's not wrapped with Routes */}
-			{authUser && <Sidebar />}
+			{authUser && <Sidebar />} 
+			{/* if we have authUser only then render sidebar-> remove it from login page */}
 			<Routes>
 				<Route path='/' element={authUser ? <HomePage /> : <Navigate to='/login' />} />
 				<Route path='/login' element={!authUser ? <LoginPage /> : <Navigate to='/' />} />

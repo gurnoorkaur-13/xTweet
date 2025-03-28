@@ -18,7 +18,7 @@ const EditProfileModal = ({ authUser }) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
 	};
 
-	useEffect(() => {
+	useEffect(() => { //to get the default(old) value for form fields in the update profile functionality
 		if (authUser) {
 			setFormData({
 				fullName: authUser.fullName,

@@ -8,6 +8,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 
+//to fetch notifications-> add a query, to delete the notifications-> need to add a mutation
 const NotificationPage = () => {
 	const queryClient = useQueryClient();
 	const { data: notifications, isLoading } = useQuery({

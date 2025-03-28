@@ -1,90 +1,65 @@
-# MERN Stack Project: Build and Deploy a Twitter Clone From Scratch | JWT, Socket.io
+# MERN Stack Twitter Clone 
 
-![Demo App](https://i.ibb.co/f8y9vGS/Group-82.png)
+## 🚀 Overview
+This is a full-stack Twitter Clone built using the MERN (MongoDB, Express, React, Node.js) stack. It replicates core Twitter functionalities such as user authentication, posting tweets, liking tweets, following users, and a real-time feed.
 
-[Video Tutorial on Youtube](https://youtu.be/4GUVz2psWUg)
+## 🛠️ Features
+- User authentication (Sign up, Login, Logout)
+- Create, read, update, and delete (CRUD) tweets
+- Like and unlike tweets
+- Follow and unfollow users
+- View user profiles with their tweets and follower details
+- Real-time updates and interactive UI
+- Secure password handling with JWT authentication
 
-Some Features:
+## 🏗️ Tech Stack
+- **Frontend**: React.js, Redux, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB with Mongoose
+- **Authentication**: JWT (JSON Web Token)
+- **State Management**: Redux Toolkit
+- **Storage**: Cloudinary (for media uploads)
 
--   ⚛️ Tech Stack: React.js, MongoDB, Node.js, Express, Tailwind
--   🔐 Authentication with JSONWEBTOKENS (JWT)
--   🔥 React Query for Data Fetching, Caching etc.
--   👥 Suggested Users to Follow
--   ✍️ Creating Posts
--   🗑️ Deleting Posts
--   💬 Commenting on Posts
--   ❤️ Liking Posts
--   🔒 Delete Posts (if you are the owner)
--   📝 Edit Profile Info
--   🖼️ Edit Cover Image and Profile Image
--   📷 Image Uploads using Cloudinary
--   🔔 Send Notifications
--   🌐 Deployment
--   ⏳ And much more!
+## 🎯 Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/gurnoorkaur-13/twitter-cloned.git
+   cd twitter-cloned
+   ```
 
-### Setup .env file
+2. Install dependencies for both frontend and backend:
+   ```sh
+   cd backend
+   npm install
+   cd ../frontend
+   npm install
+   ```
 
-```js
-MONGO_URI=...
-PORT=...
-JWT_SECRET=...
-NODE_ENV=...
-CLOUDINARY_CLOUD_NAME=...
-CLOUDINARY_API_KEY=...
-CLOUDINARY_API_SECRET=...
-```
+3. Set up environment variables: Create a `.env` file in the backend directory and add the following:
+   ```sh
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+   CLOUDINARY_API_KEY=your_cloudinary_api_key
+   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+   ```
 
-### Build the app
+4. Start the backend server:
+   ```sh
+   cd backend
+   npm start
+   ```
 
-```shell
-npm run build
-```
+5. Start the frontend server:
+   ```sh
+   cd frontend
+   npm start
+   ```
 
-### Start the app
+6. Open your browser and go to `http://localhost:3000`
 
-```shell
-npm start
-```
-
-
----------------------------------------
-# Why we're using .js in imports :
-In a Node.js (ESM - ECMAScript Modules) environment, you must explicitly specify the file extension (.js, .mjs, etc.) when importing files.
-Alternative Approaches:
-Use CommonJS (require()):
-If you're using require() in a CommonJS setup ("type": "commonjs" in package.json), you can omit .js
- Advantages of ESM over CommonJS
-1️⃣ Native JavaScript Standard (Future-Proof)
-ESM is the official module system of JavaScript and is widely used in modern front-end and back-end development.
-CommonJS is specific to Node.js and may not be compatible with future web standards.
-2️⃣ Better Performance (Supports Tree Shaking)
-ESM supports tree shaking, which helps remove unused code when bundling (e.g., in Webpack, Rollup).
-CommonJS loads entire modules even if only part of the module is used.
-3️⃣ Asynchronous Loading (Better Performance in Large Apps)
-ESM modules are asynchronous and use top-level await, allowing non-blocking module loading.
-CommonJS uses synchronous require(), which blocks execution while loading.
-
-# USER Routes Working
-1️⃣ User Signup (/signup)
-User sends a POST request with fullName, username, email, and password.
--Validation and Passoword hashing
--User is Created & Token is Generated
--Response sent exclusing password
-2️⃣ User Login (/login)
-User sends a POST request with username and password.
--Authentication
--JWT Token Issued and stored in a cookie if valid credentials
--Response
-3️⃣ Protected Route (/me)
-User sends a GET request to access their profile.
--JWT Token Validation (via Middleware)
--User Data Retrieval 
--Response
-4️⃣ User Logout (/logout)
--Clears JWT Cookie
--Response
-
-
-
-
+## 💡 Future Improvements
+- Enhance UI/UX for better user experience
+- Optimize database queries for better performance
+- Add real-time chat functionality
 

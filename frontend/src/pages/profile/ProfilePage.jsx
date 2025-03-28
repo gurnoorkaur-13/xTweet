@@ -25,7 +25,7 @@ const ProfilePage = () => {
 	const coverImgRef = useRef(null);
 	const profileImgRef = useRef(null);
 
-	const { username } = useParams();
+	const { username } = useParams(); //username as we've called it username in the profile page route in App.jsx
 
 	const { follow, isPending } = useFollow();
 	const { data: authUser } = useQuery({ queryKey: ["authUser"] });
@@ -71,7 +71,7 @@ const ProfilePage = () => {
 
 	useEffect(() => {
 		refetch();
-	}, [username, refetch]);
+	}, [username, refetch]); //whenever the /username at end of url changes -> refetch and display profile of that username
 
 	return (
 		<>

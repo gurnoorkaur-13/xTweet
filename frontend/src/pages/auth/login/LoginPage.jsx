@@ -94,7 +94,8 @@ const LoginPage = () => {
 				</form>
 				<div className='flex flex-col gap-2 mt-4'>
 					<p className='text-white text-lg'>{"Don't"} have an account?</p>
-					<Link to='/signup'>
+					<Link to='/signup'> 
+					{/* to take you to the signup page */}
 						<button className='btn rounded-full btn-primary text-white btn-outline w-full'>Sign up</button>
 					</Link>
 				</div>

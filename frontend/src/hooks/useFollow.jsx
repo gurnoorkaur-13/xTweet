@@ -21,7 +21,7 @@ const useFollow = () => {
 			}
 		},
 		onSuccess: () => {
-			Promise.all([
+			Promise.all([ //so the following can run in parallel
 				queryClient.invalidateQueries({ queryKey: ["suggestedUsers"] }),
 				queryClient.invalidateQueries({ queryKey: ["authUser"] }),
 			]);

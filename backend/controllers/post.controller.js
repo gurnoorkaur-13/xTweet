@@ -3,7 +3,7 @@ import Post from "../models/post.model.js";
 import User from "../models/user.model.js";
 import { v2 as cloudinary } from "cloudinary";
 
-export const createPost = async (req, res) => {
+export const createPost = async (req, res) => { 
 	try {
 		const { text } = req.body;
 		let { img } = req.body;
@@ -106,7 +106,7 @@ export const likeUnlikePost = async (req, res) => {
 			await Post.updateOne({ _id: postId }, { $pull: { likes: userId } }); //from the "likes" array, pull the userid
 			await User.updateOne({ _id: userId }, { $pull: { likedPosts: postId } });
 
-			const updatedLikes = post.likes.filter((id) => id.toString() !== userId.toString());
+			const updatedLikes = post.likes.filter((id) => id.toString() !== userId.toString()); //basically removes auth user's id from the array of likes
 			res.status(200).json(updatedLikes);
 		} else {
 			// Like post
@@ -179,7 +179,7 @@ export const getLikedPosts = async (req, res) => {
 };
 
 export const getFollowingPosts = async (req, res) => {
-	try {
+	try { 
 		const userId = req.user._id;
 		const user = await User.findById(userId);
 		if (!user) return res.status(404).json({ error: "User not found" });
