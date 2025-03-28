@@ -1,5 +1,19 @@
 # MERN Stack Twitter Clone 
 
+## 📸 Screenshots  
+
+### Login Page  
+![Login Page](screenshots/login-page.png)  
+
+### Home Page  
+![Home Page](screenshots/home-page.png)  
+
+### Profile Page  
+![Profile Page](screenshots/user-profile.png)  
+
+### Notifications Page  
+![Profile Page](screenshots/notification-tab.png)  
+
 ## 🚀 Overview
 This is a full-stack Twitter Clone built using the MERN (MongoDB, Express, React, Node.js) stack. It replicates core Twitter functionalities such as user authentication, posting tweets, liking tweets, following users, and a real-time feed.
 
